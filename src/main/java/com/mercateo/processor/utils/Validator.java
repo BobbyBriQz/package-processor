@@ -11,6 +11,18 @@ public class Validator {
     private static final int MAXIMUM_NO_OF_ITEMS = 15;
     private static final int MAXIMUM_COST_OF_ITEM = 100;
 
+    /**
+     * Method validates that the input is in compliance with the specified constraints
+     * The constraints are:
+     *
+     * The maximum weight that a package can hold must be <= 100.
+     * There may be up to 15 items you can to choose from.
+     * The maximum weight of an item should be <= 100.
+     * The maximum cost of an item should be <= €100.
+     *
+     * @param candidate PackagingCandidate holding weight and items to packaged
+     * @throws IllegalArgumentException if validation fails
+     * */
     public void validate(PackagingCandidate candidate) {
         int weight = candidate.getWeightLimit();
         List<Item> items = candidate.getItems();

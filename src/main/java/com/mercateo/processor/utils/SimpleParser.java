@@ -16,6 +16,11 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class SimpleParser implements Parser{
+
+    /**
+     * Method that retrieves testcases from the input file
+     * @throws IllegalArgumentException when it cannot retrieve testcases from file
+     * */
     @Override
     public List<String> getTestCases(String path) {
         try{
@@ -35,6 +40,11 @@ public class SimpleParser implements Parser{
         }
     }
 
+    /**
+     * Extracts the list of items from it's text representation
+     * @param testCases List of Strings, each representing a testcase
+     * @return a list of PackagingCandidates
+     * **/
     @Override
     public List<PackagingCandidate> extractPackagingCandidates(List<String> testCases) {
         List<PackagingCandidate> candidates = new ArrayList<>();
@@ -53,6 +63,11 @@ public class SimpleParser implements Parser{
         return candidates;
     }
 
+    /**
+     * Extracts the list of items from its text representation
+     * @param input String of all items in text format
+     * @return a list of Item objects
+     * **/
     private List<Item> extractItems(String input) {
         String[] i = input.split(" ");
         List<Item> items = new ArrayList<>();
@@ -68,6 +83,11 @@ public class SimpleParser implements Parser{
         return items;
     }
 
+    /**
+     * Use regex to extract item number between a ( and , in text
+     * @param item text representation of an item
+     * @return item number of the item
+     * */
     private int extractItemNo(String item) {
         Pattern p = Pattern.compile("\\((.*?),");
         Matcher m = p.matcher(item);
@@ -78,6 +98,11 @@ public class SimpleParser implements Parser{
 
     }
 
+    /**
+     * Use regex to extract weight between two commas in text
+     * @param item text representation of an item
+     * @return weight of the item
+     * */
     private double extractWeight(String item) {
         Pattern p = Pattern.compile(",(.*?),");
         Matcher m = p.matcher(item);
@@ -87,6 +112,11 @@ public class SimpleParser implements Parser{
         throw new IllegalArgumentException("Weight is wrongly formatted in: " + item);
     }
 
+    /**
+     * Use regex to extract price between  € and )
+     * @param item text representation of an item
+     * @return cost of the item
+     * */
     private int extractCost(String item) {
         Pattern p = Pattern.compile("€(.*?)\\)");
         Matcher m = p.matcher(item);
