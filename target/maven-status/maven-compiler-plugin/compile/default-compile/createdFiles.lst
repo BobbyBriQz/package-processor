@@ -1,0 +1,9 @@
+com/mercateo/processor/PackageProcessorApplication.class
+com/mercateo/processor/utils/SimpleParser.class
+com/mercateo/processor/models/Item.class
+com/mercateo/processor/models/ProcessedPackage.class
+com/mercateo/processor/services/PackageProcessor.class
+com/mercateo/processor/services/DPPackageProcessor.class
+com/mercateo/processor/utils/Parser.class
+com/mercateo/processor/models/PackagingCandidate.class
+com/mercateo/processor/utils/Validator.class
