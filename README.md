@@ -1,4 +1,4 @@
-#Package Processor 
+# Package Processor 
 ### Steps on how to run the program
 
 - In the project folder, navigate to the target folder
